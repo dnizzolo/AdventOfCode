@@ -50,8 +50,8 @@ countFresh :: Set.Set Range -> [Int] -> Int
 countFresh freshRanges = length . filter isFresh
  where
   isFresh item =
-    Set.foldl'
-      (\acc range -> acc || rangeContains range item)
+    Set.foldr
+      (\range acc -> rangeContains range item || acc)
       False
       freshRanges
 
