@@ -8,17 +8,15 @@ instructionValue :: Instruction -> Int
 instructionValue = either id id
 
 applyInstruction :: Int -> Instruction -> Int
-applyInstruction n =
-  \case
-    Left amount -> (n - amount) `mod` 100
-    Right amount -> (n + amount) `mod` 100
+applyInstruction n = \case
+  Left amount -> (n - amount) `mod` 100
+  Right amount -> (n + amount) `mod` 100
 
 parseInstruction :: String -> Instruction
-parseInstruction =
-  \case
-    'L' : rest -> Left $ read rest
-    'R' : rest -> Right $ read rest
-    input -> error $ "Invalid input: " <> show input
+parseInstruction = \case
+  'L' : rest -> Left $ read rest
+  'R' : rest -> Right $ read rest
+  input -> error $ "Invalid input: " <> show input
 
 password :: [Instruction] -> Int
 password = snd . foldl nextState (50, 0)
@@ -33,7 +31,7 @@ passwordOtherMethod = snd . foldl nextState (50, 0)
  where
   nextState (dial, zeroCount) instruction =
     let nextDial = applyInstruction dial instruction
-        loops = (`div` 100) . abs . instructionValue $ instruction
+        loops = (`div` 100) . instructionValue $ instruction
         nextZeroCount =
           zeroCount
             + loops
