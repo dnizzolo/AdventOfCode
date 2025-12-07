@@ -2,24 +2,21 @@
 
 module Days.Day06 (runDay06) where
 
+import Control.Arrow ((&&&), (>>>))
 import Data.Foldable (foldl')
 import Data.List (transpose)
 import Data.List.Split (wordsBy)
 
 parseHomework :: String -> ([[Int] -> Int], [[Int]])
-parseHomework contents =
-  let chunks = map words . lines $ contents
-      nums = transpose . map (map read) . init $ chunks
-      ops =
-        map
-          ( \case
-              "+" -> sum
-              "*" -> product
-              o -> error $ "Invalid operator: " <> o
-          )
-          . last
-          $ chunks
-   in (ops, nums)
+parseHomework =
+  lines
+    >>> map words
+    >>> (map parseOperator . last &&& transpose . map (map read) . init)
+ where
+  parseOperator = \case
+    "+" -> sum
+    "*" -> product
+    o -> error $ "Invalid operator: " <> o
 
 parseCephalopodNums :: String -> [[Int]]
 parseCephalopodNums =
