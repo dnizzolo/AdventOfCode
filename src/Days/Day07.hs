@@ -28,18 +28,13 @@ countTimelines startPos =
   sum . Map.elems . foldl' updateState (Map.singleton startPos 1)
  where
   updateState counter splitters =
-    let updates =
-          Set.foldl'
-            ( \acc splitter ->
-                let count = Map.findWithDefault 0 splitter counter
-                 in Map.insertWith (+) (splitter - 1) count
-                      . Map.insertWith (+) (splitter + 1) count
-                      $ acc
-            )
-            Map.empty
-            splitters
-        newCounter = Map.unionWith (+) counter updates
-     in Map.withoutKeys newCounter splitters
+    let (split, nonSplit) = Map.partitionWithKey (\k _ -> Set.member k splitters) counter
+        updated =
+          Map.unionsWith (+)
+            . map (\(s, c) -> Map.fromList [(s + 1, c), (s - 1, c)])
+            . Map.toList
+            $ split
+     in Map.unionWith (+) updated nonSplit
 
 runDay07 :: FilePath -> IO ()
 runDay07 fileName = do
