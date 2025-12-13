@@ -71,6 +71,7 @@ library
         Days.Day07
         Days.Day08
         Days.Day09
+        Days.Day12
 
     -- LANGUAGE extensions used by modules in this package.
     -- other-extensions:
@@ -80,7 +81,8 @@ library
         base ^>=4.18.3.0,
         split,
         containers,
-        disjoint-containers
+        disjoint-containers,
+        vector
 
     -- Directories containing source files.
     hs-source-dirs:   src

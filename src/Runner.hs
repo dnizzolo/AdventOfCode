@@ -11,6 +11,7 @@ import Days.Day06 (runDay06)
 import Days.Day07 (runDay07)
 import Days.Day08 (runDay08)
 import Days.Day09 (runDay09)
+import Days.Day12 (runDay12)
 
 runDay :: FilePath -> Int -> IO ()
 runDay fileName = \case
@@ -23,4 +24,5 @@ runDay fileName = \case
   7 -> runDay07 fileName
   8 -> runDay08 fileName
   9 -> runDay09 fileName
+  12 -> runDay12 fileName
   _ -> putStrLn "This day is not implemented."
