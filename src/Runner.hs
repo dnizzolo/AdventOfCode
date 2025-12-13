@@ -10,16 +10,17 @@ import Days.Day05 (runDay05)
 import Days.Day06 (runDay06)
 import Days.Day07 (runDay07)
 import Days.Day08 (runDay08)
+import Days.Day09 (runDay09)
 
 runDay :: FilePath -> Int -> IO ()
-runDay fileName =
-  \case
-    1 -> runDay01 fileName
-    2 -> runDay02 fileName
-    3 -> runDay03 fileName
-    4 -> runDay04 fileName
-    5 -> runDay05 fileName
-    6 -> runDay06 fileName
-    7 -> runDay07 fileName
-    8 -> runDay08 fileName
-    _ -> putStrLn "This day is not implemented."
+runDay fileName = \case
+  1 -> runDay01 fileName
+  2 -> runDay02 fileName
+  3 -> runDay03 fileName
+  4 -> runDay04 fileName
+  5 -> runDay05 fileName
+  6 -> runDay06 fileName
+  7 -> runDay07 fileName
+  8 -> runDay08 fileName
+  9 -> runDay09 fileName
+  _ -> putStrLn "This day is not implemented."
