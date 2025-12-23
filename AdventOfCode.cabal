@@ -58,10 +58,8 @@ library
     import:           warnings
 
     -- Modules exported by the library.
-    exposed-modules:  Runner
-
-    -- Modules included in this library but not exported.
-    other-modules:
+    exposed-modules:
+        Runner
         Days.Day01
         Days.Day02
         Days.Day03
@@ -74,6 +72,9 @@ library
         Days.Day10
         Days.Day11
         Days.Day12
+
+    -- Modules included in this library but not exported.
+    -- other-modules:
 
     -- LANGUAGE extensions used by modules in this package.
     -- other-extensions:
@@ -109,7 +110,6 @@ executable AdventOfCode
     -- Other library packages from which modules are imported.
     build-depends:
         base ^>=4.18.3.0,
-        filepath,
         AdventOfCode
 
     -- Directories containing source files.
@@ -143,4 +143,7 @@ test-suite AdventOfCode-test
     -- Test dependencies.
     build-depends:
         base ^>=4.18.3.0,
-        AdventOfCode
+        AdventOfCode,
+        silently,
+        hspec,
+        hspec-golden
