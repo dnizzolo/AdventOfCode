@@ -10,12 +10,12 @@ import Text.Read (readMaybe)
 usage :: IO ()
 usage = do
   progName <- getProgName
-  putStrLn $ "Usage: " <> progName <> " <day> <input file>"
+  putStrLn $ "Usage: " <> progName <> " <year> <day> <input file>"
 
 main :: IO ()
 main =
   getArgs >>= \case
-    [dayArg, fileName] -> case readMaybe @Int dayArg of
-      Just day -> runDay fileName day
-      Nothing -> hPutStrLn stderr ("Invalid day: " <> dayArg) >> usage
+    args@[yearArg, dayArg, fileName] -> case (readMaybe yearArg, readMaybe dayArg) of
+      (Just year, Just day) -> runDay year day fileName
+      _ -> hPutStrLn stderr ("Invalid args: " <> unwords args) >> usage
     _ -> usage

@@ -1,4 +1,4 @@
-module Days.Day03 (runDay03) where
+module Year2025.Days.Day03 (runDay03) where
 
 import Data.Char (digitToInt)
 import Data.Foldable (foldl')

@@ -1,4 +1,4 @@
-module Days.Day11 (runDay11) where
+module Year2025.Days.Day11 (runDay11) where
 
 import Control.Arrow (second, (>>>))
 import Data.Bits (bit, (.|.))

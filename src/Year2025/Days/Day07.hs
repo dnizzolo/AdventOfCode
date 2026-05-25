@@ -1,4 +1,4 @@
-module Days.Day07 (runDay07) where
+module Year2025.Days.Day07 (runDay07) where
 
 import Control.Arrow ((&&&), (>>>))
 import Data.Foldable (foldl')

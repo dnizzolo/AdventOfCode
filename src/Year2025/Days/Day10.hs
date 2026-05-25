@@ -1,6 +1,6 @@
 {-# LANGUAGE RecordWildCards #-}
 
-module Days.Day10 (runDay10) where
+module Year2025.Days.Day10 (runDay10) where
 
 import Control.Monad (guard)
 import Data.Char (isDigit)

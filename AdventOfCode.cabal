@@ -60,21 +60,22 @@ library
     -- Modules exported by the library.
     exposed-modules:
         Runner
-        Days.Day01
-        Days.Day02
-        Days.Day03
-        Days.Day04
-        Days.Day05
-        Days.Day06
-        Days.Day07
-        Days.Day08
-        Days.Day09
-        Days.Day10
-        Days.Day11
-        Days.Day12
 
     -- Modules included in this library but not exported.
-    -- other-modules:
+    other-modules:
+        Year2025.Runner
+        Year2025.Days.Day01
+        Year2025.Days.Day02
+        Year2025.Days.Day03
+        Year2025.Days.Day04
+        Year2025.Days.Day05
+        Year2025.Days.Day06
+        Year2025.Days.Day07
+        Year2025.Days.Day08
+        Year2025.Days.Day09
+        Year2025.Days.Day10
+        Year2025.Days.Day11
+        Year2025.Days.Day12
 
     -- LANGUAGE extensions used by modules in this package.
     -- other-extensions:

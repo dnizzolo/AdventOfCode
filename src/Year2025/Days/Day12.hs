@@ -1,6 +1,6 @@
 {-# LANGUAGE RecordWildCards #-}
 
-module Days.Day12 (runDay12) where
+module Year2025.Days.Day12 (runDay12) where
 
 import Control.Arrow ((&&&), (>>>))
 import Data.Char (isDigit)

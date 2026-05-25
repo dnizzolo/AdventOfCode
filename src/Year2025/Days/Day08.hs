@@ -1,6 +1,6 @@
 {-# LANGUAGE LambdaCase #-}
 
-module Days.Day08 (runDay08) where
+module Year2025.Days.Day08 (runDay08) where
 
 import Data.DisjointSet qualified as DSet
 import Data.Foldable (foldl')

@@ -1,6 +1,6 @@
 {-# LANGUAGE LambdaCase #-}
 
-module Days.Day06 (runDay06) where
+module Year2025.Days.Day06 (runDay06) where
 
 import Control.Arrow ((&&&), (>>>))
 import Data.Foldable (foldl')

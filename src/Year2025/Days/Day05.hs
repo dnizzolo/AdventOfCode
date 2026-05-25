@@ -1,4 +1,4 @@
-module Days.Day05 (runDay05) where
+module Year2025.Days.Day05 (runDay05) where
 
 import Data.Foldable (foldl')
 import Data.List.Split (splitOn)

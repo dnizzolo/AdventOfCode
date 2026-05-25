@@ -1,6 +1,6 @@
 {-# LANGUAGE LambdaCase #-}
 
-module Days.Day01 (runDay01) where
+module Year2025.Days.Day01 (runDay01) where
 
 type Instruction = Either Int Int
 

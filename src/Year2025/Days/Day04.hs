@@ -1,4 +1,4 @@
-module Days.Day04 (runDay04) where
+module Year2025.Days.Day04 (runDay04) where
 
 import Data.Set qualified as Set
 

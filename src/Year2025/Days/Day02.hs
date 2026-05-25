@@ -1,4 +1,4 @@
-module Days.Day02 (runDay02) where
+module Year2025.Days.Day02 (runDay02) where
 
 import Data.List.Split (splitOn)
 

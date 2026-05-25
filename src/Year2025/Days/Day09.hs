@@ -1,7 +1,7 @@
 {-# LANGUAGE LambdaCase #-}
 {-# LANGUAGE RecordWildCards #-}
 
-module Days.Day09 (runDay09) where
+module Year2025.Days.Day09 (runDay09) where
 
 import Data.List (tails)
 import Data.List.Split (splitOn)
