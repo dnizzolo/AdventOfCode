@@ -1,16 +1,16 @@
 module Year2025.Days.Day07 (runDay07) where
 
 import Control.Arrow ((&&&), (>>>))
-import Data.Foldable (foldl')
+import Control.Monad ((<=<))
 import Data.List (elemIndex, elemIndices)
 import Data.Map.Strict qualified as Map
-import Data.Maybe (fromJust)
+import Data.Maybe (fromJust, listToMaybe)
 import Data.Set qualified as Set
 
 parseDiagram :: String -> (Int, [Set.Set Int])
 parseDiagram =
   lines
-    >>> (fromJust . elemIndex 'S' . head &&& map (Set.fromList . elemIndices '^'))
+    >>> (fromJust . (elemIndex 'S' <=< listToMaybe) &&& map (Set.fromList . elemIndices '^'))
 
 countSplits :: Int -> [Set.Set Int] -> Int
 countSplits startPos = fst . foldl' updateState (0, Set.singleton startPos)

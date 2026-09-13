@@ -4,7 +4,6 @@ module Year2025.Days.Day10 (runDay10) where
 
 import Control.Monad (guard)
 import Data.Char (isDigit)
-import Data.Foldable (foldl')
 import Data.IntSet qualified as ISet
 import Data.List (subsequences)
 import Data.Map.Strict qualified as M

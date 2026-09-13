@@ -3,7 +3,6 @@
 module Year2025.Days.Day08 (runDay08) where
 
 import Data.DisjointSet qualified as DSet
-import Data.Foldable (foldl')
 import Data.List (sortBy, sortOn, tails)
 import Data.List.Split (splitOn)
 
@@ -40,10 +39,10 @@ connectAll = go . foldMap DSet.singleton
  where
   go disjointSets = \case
     ((p1@(x1, _, _), p2@(y1, _, _)) : ps) ->
-      let nextDisjointsSets = DSet.union p1 p2 disjointSets
-       in if DSet.sets nextDisjointsSets == 1
+      let nextDisjointSets = DSet.union p1 p2 disjointSets
+       in if DSet.sets nextDisjointSets == 1
             then x1 * y1
-            else go nextDisjointsSets ps
+            else go nextDisjointSets ps
     _ -> error "Error: cannot merge all boxes into the same set"
 
 runDay08 :: FilePath -> IO ()

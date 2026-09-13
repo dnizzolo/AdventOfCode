@@ -3,7 +3,6 @@
 module Year2025.Days.Day06 (runDay06) where
 
 import Control.Arrow ((&&&), (>>>))
-import Data.Foldable (foldl')
 import Data.List (transpose)
 import Data.List.Split (wordsBy)
 
