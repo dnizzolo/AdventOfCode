@@ -31,7 +31,7 @@ rectangleFromPoints ((x1, y1), (x2, y2)) =
 maxRedGreen :: [Rectangle] -> [Point] -> Int
 maxRedGreen rects vertices = maximum . map rectArea . filter isValid $ rects
  where
-  edges = zipWith mkEdge vertices (tail . cycle $ vertices)
+  edges = zipWith mkEdge vertices (drop 1 . cycle $ vertices)
   isValid r = not . any (intersects r) $ edges
   intersects Rectangle{rectLowerLeft = (x1, y1), rectUpperRight = (x2, y2)} = \case
     XEdge{..} ->

@@ -6,6 +6,7 @@ import Control.Arrow ((&&&), (>>>))
 import Data.Char (isDigit)
 import Data.List (partition)
 import Data.List.Split (splitOn, wordsBy)
+import Data.Maybe (fromJust, listToMaybe)
 import Data.Vector.Strict qualified as V
 
 newtype PresentsSpec = PresentsSpec {presents :: V.Vector Int}
@@ -29,7 +30,7 @@ parseSummary =
   splitOn "\n\n" >>> partition ('#' `elem`) >>> (presentsSpec . fst &&& regionSpecs . snd)
  where
   presentsSpec = map (length . filter (== '#')) >>> V.fromList >>> PresentsSpec
-  regionSpecs = head >>> lines >>> map regionSpecFromString
+  regionSpecs = fromJust . listToMaybe >>> lines >>> map regionSpecFromString
 
 countFit :: PresentsSpec -> [RegionSpec] -> Int
 countFit sizes = length . filter fits

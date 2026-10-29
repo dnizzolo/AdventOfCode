@@ -10,7 +10,13 @@ goldenRun label run fileName = golden label $ capture_ (run fileName)
 
 main :: IO ()
 main = hspec $ do
+  year2018
   year2025
+
+year2018 :: Spec
+year2018 = do
+  describe "2018 day01" $
+    goldenRun "for input" (runDay 2018 1) "inputs/2018/day01.txt"
 
 year2025 :: Spec
 year2025 = do
