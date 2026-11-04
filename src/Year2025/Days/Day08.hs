@@ -2,8 +2,9 @@
 
 module Year2025.Days.Day08 (runDay08) where
 
+import Advent (combinationsOf2)
 import Data.DisjointSet qualified as DSet
-import Data.List (sortBy, sortOn, tails)
+import Data.List (sortBy, sortOn)
 import Data.List.Split (splitOn)
 
 type Pos = (Int, Int, Int)
@@ -14,9 +15,6 @@ parsePositions = map parsePosition . lines
   parsePosition s = case splitOn "," s of
     [a, b, c] -> (read a, read b, read c)
     _ -> error $ "Invalid input position: " <> s
-
-combinationsOf2 :: [a] -> [(a, a)]
-combinationsOf2 l = [(x, y) | (x : ys) <- tails l, y <- ys]
 
 closestBoxes :: [Pos] -> [(Pos, Pos)]
 closestBoxes = sortOn dist . combinationsOf2

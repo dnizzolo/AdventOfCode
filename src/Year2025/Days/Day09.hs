@@ -3,7 +3,7 @@
 
 module Year2025.Days.Day09 (runDay09) where
 
-import Data.List (tails)
+import Advent (combinationsOf2)
 import Data.List.Split (splitOn)
 
 type Point = (Int, Int)
@@ -47,9 +47,6 @@ parsePositions = map parsePosition . lines
   parsePosition s = case splitOn "," s of
     [a, b] -> (read a, read b)
     _ -> error $ "Invalid input position: " <> s
-
-combinationsOf2 :: [a] -> [(a, a)]
-combinationsOf2 l = [(x, y) | (x : ys) <- tails l, y <- ys]
 
 runDay09 :: FilePath -> IO ()
 runDay09 fileName = do

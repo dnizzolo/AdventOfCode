@@ -63,8 +63,11 @@ library
 
     -- Modules included in this library but not exported.
     other-modules:
+        Advent
+
         Year2018.Runner
         Year2018.Days.Day01
+        Year2018.Days.Day02
 
         Year2025.Runner
         Year2025.Days.Day01
