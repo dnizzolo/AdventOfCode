@@ -24,4 +24,4 @@ runDay02 :: FilePath -> IO ()
 runDay02 fileName = do
   boxIds <- lines <$> readFile fileName
   putStrLn $ "Part 1: " <> show (checksum boxIds)
-  putStrLn $ "Part 2: " <> fromMaybe "No solution found" (correctId boxIds)
+  putStrLn $ "Part 2: " <> fromMaybe "no solution found" (correctId boxIds)

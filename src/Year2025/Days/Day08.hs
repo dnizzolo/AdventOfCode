@@ -41,7 +41,7 @@ connectAll = go . foldMap DSet.singleton
        in if DSet.sets nextDisjointSets == 1
             then x1 * y1
             else go nextDisjointSets ps
-    _ -> error "Error: cannot merge all boxes into the same set"
+    _ -> error "Cannot merge all boxes into the same set"
 
 runDay08 :: FilePath -> IO ()
 runDay08 fileName = do

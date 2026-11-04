@@ -21,6 +21,9 @@ year2018 = do
   describe "2018 day02" $
     goldenRun "for input" (runDay 2018 2) "inputs/2018/day02.txt"
 
+  describe "2018 day03" $
+    goldenRun "for input" (runDay 2018 3) "inputs/2018/day03.txt"
+
 year2025 :: Spec
 year2025 = do
   describe "2025 day01" $

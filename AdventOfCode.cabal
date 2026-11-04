@@ -68,6 +68,7 @@ library
         Year2018.Runner
         Year2018.Days.Day01
         Year2018.Days.Day02
+        Year2018.Days.Day03
 
         Year2025.Runner
         Year2025.Days.Day01

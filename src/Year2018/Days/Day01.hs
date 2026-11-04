@@ -10,7 +10,7 @@ parseChange = \case
   x -> read x
 
 repeatedTwice :: [Int] -> Int
-repeatedTwice xs = go 0 (ISet.singleton 0) (cycle xs)
+repeatedTwice = go 0 (ISet.singleton 0) . cycle
  where
   go curr seen = \case
     e : es ->
